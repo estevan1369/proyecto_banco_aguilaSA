@@ -1,10 +1,21 @@
 # 
+import json
+try:
+    with open("datos.json", "r") as archivo:
+        datos=json.load(archivo)
+        saldo=datos["saldo"]
+        historial=datos["historial"]
+except FileNotFoundError:
+    historial=[]
+    saldo=0
+
+
 
 #la lista se utiliza para guardar el histprial de todas las transacciones
-historial=[]
+
  
  #se muestra el saldo actual del usuario
-saldo=0
+
 
 #imprimo un mensaje de bienvenida para el ususari 
 print("bienvenido a banco aguila\n: por favor ingrese la tarjeta")
@@ -100,7 +111,10 @@ while True :
     elif usu=="salir":
         print("programa finalizado...\n")
         print("gracias por visitar el banco aguila")
-        break
+
+        with open("datos.json","w") as archivo:
+            json.dump({"saldo":saldo,"historial":historial},archivo)
+            break
 
     #llama la funcion 'def' la cual imprime nuevamente el menu
     elif usu =="volver":
