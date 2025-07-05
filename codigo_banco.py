@@ -26,7 +26,7 @@ while True :
         print("¡conturaseña incorrecta!")
 
 #muestro el menu principal 
-print("1: consultar saldo\n 2:depositar\n 3:retirar\n 4:ver historial\n 5:salir\n 6:volver al menu")
+print(" menu\n 1: consultar saldo\n 2:depositar\n 3:retirar\n 4:ver historial\n 5:salir\n 6:volver al menu")
 
 #defini una variable para imprimir el menu (se utiliza cuando el usuario escribe 'salir' )
 def bloque_especifico():
@@ -38,13 +38,13 @@ while True :
     usu=(input("ingrese una opcion(salir / volver): "))
     #si la opcion es un numero valido, lo convierte en entero
     if usu.isdigit():
-        usu=int(usu)
-    elif usu ==1:
+        usu = int(usu)
+    if usu ==1:
         #muestra al usuario el saldo actual disponible en su cuenta
         print(f"tu saldo actual es de :{saldo}")
     elif usu ==2:
         #solicito al usuario el monto a depositar y el numero de cuenta
-        monto=(float(input("iingrese la contidad a depositar: ")))
+        monto=(float(input("ingrese la contidad a depositar: ")))
         numcuenta=(int(input("ingrese el numero de cuenta: ")))
          #calculo un pequeño interes sobre el monto (0,5%)
         interes=monto*0.005
@@ -55,7 +55,7 @@ while True :
         #registro la operacion en la lista 
         historial.append(f"+{monto_neto} deposito")
         #muestro un mensaje indicando el numero d cuenta, monto depositado, interes, monto total y el saldo actual
-        print(f"se deposito en la cuenta, numero de cuenta : {numcuenta} el dinero : {monto} menos el interes  {interes} monto neto: {monto_neto} el saldo actial : {saldo}")
+        print(f"se deposito en la cuenta, numero de cuenta : {numcuenta}\n el dinero : {monto}\n menos el interes : {interes}\n monto neto: {monto_neto}\n el saldo actial : {saldo}")
     elif usu ==3:
         #solicito el monto a depositar y el numero de cuenta
         monto=(float(input("ingrese la cantidad a retirar: ")))
@@ -73,7 +73,8 @@ while True :
         for h in historial:
             print(h)
             #imprimo el historial y el saldo actual
-        print(f"el historial es {historial} y el saldo es {saldo}")
+        print(f"el historial es {historial} y el saldo es {saldo}\n")
+        print("gracias por visitar el banco aguila")
         #esto finaliza el proigrama si el usuario ingresa salir, imprimiendo el menzaje (programa finalizado...)
     elif usu=="salir":
         print("programa finalizado...")
