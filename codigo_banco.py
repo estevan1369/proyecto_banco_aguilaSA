@@ -42,6 +42,7 @@ while True :
     if usu ==1:
         #muestra al usuario el saldo actual disponible en su cuenta
         print(f"tu saldo actual es de :{saldo}")
+        print("gracias por visitar el banco aguila")
     elif usu ==2:
         #solicito al usuario el monto a depositar y el numero de cuenta
         monto=(float(input("ingrese la contidad a depositar: ")))
@@ -55,7 +56,8 @@ while True :
         #registro la operacion en la lista 
         historial.append(f"+{monto_neto} deposito")
         #muestro un mensaje indicando el numero d cuenta, monto depositado, interes, monto total y el saldo actual
-        print(f"se deposito en la cuenta, numero de cuenta : {numcuenta}\n el dinero : {monto}\n menos el interes : {interes}\n monto neto: {monto_neto}\n el saldo actial : {saldo}")
+        print(f"se deposito en la cuenta, numero de cuenta : {numcuenta}\n  dinero depositado : {monto}\n menos el interes de '0,5%': {interes}\n totalidad ingresada en la cuenta: {monto_neto}\n el saldo actial : {saldo}")
+        print("gracias por visitar el banco aguila")
     elif usu ==3:
         #solicito el monto a depositar y el numero de cuenta
         monto=(float(input("ingrese la cantidad a retirar: ")))
@@ -65,7 +67,8 @@ while True :
         #registro la operacion en la lista
         historial.append(f"-{monto}retiro")
         #muestro un menu que indica el monto a retirar y el numero de cuenta
-        print(f"se han retirado{monto} en la cuenta {numcuenta}")
+        print(f"se han retirado {monto} \n en la cuenta {numcuenta}")
+        print("gracias por visitar el banco aguila")
     elif usu ==4:
         #imprimo un encabezado
         print("historial de operaciones")
@@ -73,11 +76,12 @@ while True :
         for h in historial:
             print(h)
             #imprimo el historial y el saldo actual
-        print(f"el historial es {historial} y el saldo es {saldo}\n")
+        print(f"el historial es : {historial}\n  el saldo es : {saldo}\n")
         print("gracias por visitar el banco aguila")
         #esto finaliza el proigrama si el usuario ingresa salir, imprimiendo el menzaje (programa finalizado...)
     elif usu=="salir":
         print("programa finalizado...")
+        print("gracias por visitar el banco aguila")
         break
     #llama la funcion 'def' la cual imprime nuevamente el menu
     elif usu =="volver":
