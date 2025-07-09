@@ -1,5 +1,9 @@
-# 
+# el programa se basa en un codigo que wsimula la interaccion con un cajero automatico pide retirtar dinero, consultar saldo, depositar dinero, ver historial y sqlir. 
+
+#este import funciona para incluir la biblioteca (json), que permite trabajar con datos en formato Json
 import json
+
+#aqui lee el contenido del archivo de datos. JSON lo convierte en un diccionario y luego se extraen las claves, saldo y historial
 try:
     with open("datos.json", "r") as archivo:
         datos=json.load(archivo)
@@ -9,14 +13,7 @@ except FileNotFoundError:
     historial=[]
     saldo=0
 
-
-
-#la lista se utiliza para guardar el histprial de todas las transacciones
-
- 
  #se muestra el saldo actual del usuario
-
-
 #imprimo un mensaje de bienvenida para el ususari 
 print("bienvenido a banco aguila\n: por favor ingrese la tarjeta")
 
@@ -112,6 +109,7 @@ while True :
         print("programa finalizado...\n")
         print("gracias por visitar el banco aguila")
 
+#guardamos los datos antes de salir,saldo y historia y lo convierte en texto JSON, para guardarlo en el archivo datos.json.
         with open("datos.json","w") as archivo:
             json.dump({"saldo":saldo,"historial":historial},archivo)
             break
@@ -125,5 +123,6 @@ while True :
         #si la opcion ingresada por el usuario no es ninguna de las validas (1 ,2 ,3 ,4 , "salir", "volver") imprime un mensaje indicando que se produjo un error 
     else:
         print("se produjo un error")
+        break
 print("gracias porpreferir a nuestro banco S.A\n ¡que tenga buen dia!\n  Errrrr diablaz000")
     
