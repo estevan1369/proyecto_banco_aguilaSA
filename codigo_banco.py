@@ -1,5 +1,6 @@
-# el programa se basa en un codigo que wsimula la interaccion con un cajero automatico pide retirtar dinero, consultar saldo, depositar dinero, ver historial y sqlir. 
+# el programa se basa en un codigo que simula la interaccion con un cajero automatico pide retirtar dinero, consultar saldo, depositar dinero, ver historial y sqlir. 
 
+#JSON es un un formato de texto ligero para almacenar e intercanviar datos 
 #este import funciona para incluir la biblioteca (json), que permite trabajar con datos en formato Json
 import json
 
@@ -45,6 +46,7 @@ while True :
 #muestro el menu principal 
 print(" menu\n 1: consultar saldo\n 2:depositar\n 3:retirar\n 4:ver historial\n 5:salir\n 6:volver al menu")
 
+#para que sirve "def" se utiliza para definir una funcion, en mi caso lo utilice para volver a ejecutar el codigo apartir de aqui solo si se cumple la condicion de (6 o volver)
 #defini una variable para imprimir el menu (se utiliza cuando el usuario escribe 'salir' )
 def bloque_especifico():
     print("1: consultar saldo\n 2:depositar\n 3:retirar\n 4:ver historial\n 5:salir\n 6:volver al menu")
