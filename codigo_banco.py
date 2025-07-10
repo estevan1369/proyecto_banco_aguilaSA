@@ -6,16 +6,26 @@ import json
 #aqui lee el contenido del archivo de datos. JSON lo convierte en un diccionario y luego se extraen las claves, saldo y historial
 try:
     with open("datos.json", "r") as archivo:
+
+        #este especificamente lo conovierte en un diccionario
         datos=json.load(archivo)
+
+        #extrae el saldo almacenado en el archivo y lo guarda en la variable saldo 
         saldo=datos["saldo"]
+
+        #extrae el historial de operaciones y lo guarda en la lista historial
         historial=datos["historial"]
+
+        # if isinstance (saldo, (list,tuple)):
+        #     saldo=saldo[100000]
 except FileNotFoundError:
+
     historial=[]
-    saldo=0
+    saldo=100000
 
  #se muestra el saldo actual del usuario
 #imprimo un mensaje de bienvenida para el ususari 
-print("bienvenido a banco aguila\n: por favor ingrese la tarjeta")
+print(" bienvenido a banco aguila\n por favor ingrese la tarjeta")
 
 #solicito al usuario la contraseña (pero no la valida)
 contraseña=(input("ingrese la contraseña: "))
@@ -47,8 +57,10 @@ while True :
     #se le pide al usñuañrio una opcion 
     usu=(input("ingrese una opcion(salir / volver): "))
 
-    #si la opcion es un numero valido, lo convierte en entero
+    #si es una cadena numerica lo convierte en un numero entero(int), para poder usarlo
     if usu.isdigit():
+
+        #convierte la opcion de texto en un numero entero
         usu = int(usu)
     if usu ==1:
 
@@ -56,13 +68,14 @@ while True :
         print(f"tu saldo actual es de :{saldo}\n")
         print("gracias por visitar el banco aguila")
     elif usu ==2:
-
         #solicito al usuario el monto a depositar y el numero de cuenta
-        monto=(int(input("ingrese la contidad a depositar: ")))
+        monto=(input("ingrese la cantidad a depositar: "))
+        
+        #solicito el numero de cuenta
         numcuenta=(int(input("ingrese el numero de cuenta: ")))
 
          #calculo un pequeño interes sobre el monto (0,5%)
-        interes=monto*0.005
+        interes=monto*5
 
         #realizo una operacion para restar el interes al monto
         monto_neto=monto-interes
@@ -109,7 +122,7 @@ while True :
         print("programa finalizado...\n")
         print("gracias por visitar el banco aguila")
 
-#guardamos los datos antes de salir,saldo y historia y lo convierte en texto JSON, para guardarlo en el archivo datos.json.
+#guardamos los datos antes de salir,saldo eh historia y lo convierte en formato JSON, para guardarlo en el archivo datos.json.
         with open("datos.json","w") as archivo:
             json.dump({"saldo":saldo,"historial":historial},archivo)
             break
@@ -123,6 +136,5 @@ while True :
         #si la opcion ingresada por el usuario no es ninguna de las validas (1 ,2 ,3 ,4 , "salir", "volver") imprime un mensaje indicando que se produjo un error 
     else:
         print("se produjo un error")
-        break
 print("gracias porpreferir a nuestro banco S.A\n ¡que tenga buen dia!\n  Errrrr diablaz000")
     
