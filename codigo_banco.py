@@ -30,7 +30,7 @@ print("bienvenido a banco aguila\n: por favor ingrese la tarjeta")
 contraseña=(input("ingrese la contraseña: "))
 
 #clave correcta
-clave=1609
+clave="mays"
 
 #inicio un bucle para balidar la contraseña hasta que sea correcta
 while True :
@@ -41,7 +41,7 @@ while True :
         print("¡contraseña correcta!")
         break
     else:
-        print("¡conturaseña incorrecta!")
+        print("¡contraseña incorrecta!")
 
 #muestro el menu principal 
 print(" menu\n 1: consultar saldo\n 2:depositar\n 3:retirar\n 4:ver historial\n 5:salir\n 6:volver al menu")
