@@ -68,7 +68,6 @@ while True :
     elif usu ==2:
 
         #solicito al usuario el monto a depositar y el numero de cuenta
-        print("aviso:NO SE PUEDE DEPOSITAR MODOS NEGATIVOS O NO NUMERICOS")
         monto=(int(input("ingrese la contidad a depositar: ")))
         numcuenta=(int(input("ingrese el numero de cuenta: ")))
         
@@ -136,5 +135,5 @@ while True :
 
         #si la opcion ingresada por el usuario no es ninguna de las validas (1 ,2 ,3 ,4 , "salir", "volver") imprime un mensaje indicando que se produjo un error 
     else:
-        print("gracias porpreferir a nuestro banco S.A\n ¡que tenga buen dia!\n ")
+        print("gracias por preferir a nuestro banco S.A\n ¡que tenga buen dia!\n ")
     
