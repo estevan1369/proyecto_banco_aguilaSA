@@ -30,7 +30,7 @@ print("bienvenido a banco aguila\n: por favor ingrese la tarjeta")
 contraseña=(input("ingrese la contraseña: "))
 
 #clave correcta
-clave="jeremiaz69"
+clave=1609
 
 #inicio un bucle para balidar la contraseña hasta que sea correcta
 while True :
@@ -136,5 +136,5 @@ while True :
 
         #si la opcion ingresada por el usuario no es ninguna de las validas (1 ,2 ,3 ,4 , "salir", "volver") imprime un mensaje indicando que se produjo un error 
     else:
-        print("gracias porpreferir a nuestro banco S.A\n ¡que tenga buen dia!\n Errrrr diablaz000")
+        print("gracias porpreferir a nuestro banco S.A\n ¡que tenga buen dia!\n ")
     
