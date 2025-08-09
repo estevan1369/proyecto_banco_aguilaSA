@@ -26,11 +26,23 @@ except FileNotFoundError:
 #imprimo un mensaje de bienvenida para el ususari 
 print("bienvenido a banco aguila\n: por favor ingrese la tarjeta")
 
-#solicito al usuario la contraseña (pero no la valida)
-contraseña=(input("ingrese la contraseña: "))
-
 #clave correcta
-clave="mays"
+clave="1609"
+# intentos para la contraseña (máximo 3)
+intentos = 0
+max_intentos = 3
+
+while intentos < max_intentos:
+    contraseña = input("ingrese la contraseña: ")
+    if contraseña == clave:
+        print("¡contraseña correcta!")
+        break
+    else:
+        intentos += 1
+        print(f"¡contraseña incorrecta! Intento {intentos} de {max_intentos}")
+else:
+    print("Demasiados intentos fallidos. Tarjeta bloqueada.")
+    exit()
 
 #inicio un bucle para balidar la contraseña hasta que sea correcta
 while True :
