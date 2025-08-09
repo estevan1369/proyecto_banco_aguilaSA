@@ -27,7 +27,21 @@ except FileNotFoundError:
 print("bienvenido a banco aguila\n: por favor ingrese la tarjeta")
 
 #clave correcta
-clave="1609"
+clave="1234"
+intentos= 0
+while intentos < 3 :
+    contraseña = int(input("retifique la contrasdeña (Pin numerico):"))
+    if contraseña == clave :
+        print("contraseña incorrecto")
+        break
+    else:
+        intentos += 1
+        print(f"PIN incorrecto interntos {intentos}/3")
+    if intentos == 3:
+        print("demasiados intentos fallidos. su tarjeta sera bloqueada. /n comuniquese al banco")
+        exit()
+
+
 # intentos para la contraseña (máximo 3)
 intentos = 0
 max_intentos = 3
